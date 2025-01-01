@@ -1,0 +1,7 @@
+{
+    "A": "In this scenario, the ego vehicle should consider the following safe actions:\n\n1. **CAM_FRONT:**\n   - **Observation:** There is a vehicle stopped in the lane with people around it.\n   - **Action:** Slow down and prepare to stop if necessary to avoid collision with the stopped vehicle and ensure pedestrian safety.\n\n2. **CAM_FRONT_LEFT and CAM_FRONT_RIGHT:**\n   - **Observation:** Vehicles are parked on the side of the road. No immediate threat is visible.\n   - **Action:** Maintain awareness of any potential pedestrians or vehicles entering the lane unexpectedly.\n\n3. **CAM_BACK:**\n   - **Observation:** Traffic is approaching from behind.\n   - **Action:** Ensure safe distance is maintained from vehicles behind and be prepared for any sudden stops.\n\n4. **CAM_BACK_LEFT and CAM_BACK_RIGHT:**\n   - **Observation:** Vehicles are parked, and there is ongoing traffic.\n   - **Action:** Monitor for any vehicles or pedestrians that might enter the lane unexpectedly.\n\n**Overall Safe Actions:**\n- **Maintain a safe speed:** Adjust speed according to the traffic and road conditions.\n- **Increase awareness:** Keep an eye on pedestrians and vehicles around the stopped vehicle in front.\n- **Signal intentions:** Use turn signals if changing lanes or making turns.\n- **Prepare to stop:** Be ready to stop if pedestrians or other vehicles enter the path unexpectedly.",
+    "baseline": "",
+    "rubric-aware": "",
+    "question-aware": "",
+    "context-aware": ""
+}

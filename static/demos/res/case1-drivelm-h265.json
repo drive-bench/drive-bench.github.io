@@ -1,0 +1,7 @@
+{
+    "A": "B",
+    "baseline": "0",
+    "rubric-aware": "1. Answer Correctness (50 points): 0 points\n 2. Object Recognition (10 points): 0 points\n 3. Object Location and Orientation (15 points): 0 points\n 4. Environmental Condition Awareness (15 points): 0 points\n 5. Clarity of Reasoning (10 points): 0 points\n Total Score: 0\n \n Brief Summary: The predicted answer \"B\" does not align with the correct answer \"A. Turn left\" and lacks any explanation. There is no recognition of objects, location, orientation, environmental conditions, or clarity of reasoning provided. Therefore, the total score is 0.",
+    "question-aware": "1. Answer Correctness (50 points): 0\n 2. Object Recognition (10 points): 0\n 3. Object Location and Orientation (15 points): 0\n 4. Environmental Condition Awareness (15 points): 0\n 5. Clarity of Reasoning (10 points): 0\n Total Score: 0\n \n Brief Summary: The predicted answer does not match the correct answer, and no explanation is provided. As a result, the score is 0 across all criteria.",
+    "context-aware": "1. Answer Correctness (50 points): 0\n 2. Object Recognition (10 points): 0\n 3. Object Location and Orientation (15 points): 0\n 4. Environmental Condition Awareness (15 points): 0\n 5. Clarity of Reasoning (10 points): 0\n Total Score: 0\n \n Brief Summary: The predicted answer does not match the correct answer, and no explanation is provided. As a result, the score is 0 across all criteria."
+}

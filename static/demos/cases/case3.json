@@ -1,0 +1,18 @@
+{
+    "Q": "In this scenario, what are safe actions to take for the ego vehicle",
+    "A": "Keep going at the same speed, slightly offset to the left.",
+    "img": ["./static/images/{corruption}/n008-2018-08-28-16-57-39-0400__CAM_FRONT_LEFT__1535490007254799.jpg",
+            "./static/images/{corruption}/n008-2018-08-28-16-57-39-0400__CAM_FRONT__1535490007262404.jpg",
+            "./static/images/{corruption}/n008-2018-08-28-16-57-39-0400__CAM_FRONT_RIGHT__1535490007270482.jpg",
+            "./static/images/{corruption}/n008-2018-08-28-16-57-39-0400__CAM_BACK_LEFT__1535490007297405.jpg",
+            "./static/images/{corruption}/n008-2018-08-28-16-57-39-0400__CAM_BACK__1535490007287558.jpg",
+            "./static/images/{corruption}/n008-2018-08-28-16-57-39-0400__CAM_BACK_RIGHT__1535490007278113.jpg"
+            ],
+    "text-only-img": ["./static/images/text-only/black_image.png",
+            "./static/images/text-only/black_image.png",
+            "./static/images/text-only/black_image.png",
+            "./static/images/text-only/black_image.png",
+            "./static/images/text-only/black_image.png",
+            "./static/images/text-only/black_image.png"
+]
+    }

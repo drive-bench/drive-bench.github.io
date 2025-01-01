@@ -1,0 +1,18 @@
+{
+    "Q": "What **object** should the ego vehicle **notice first** when the ego vehicle is getting to **the next possible location**?\nWhat is the **state** of the object that is first noticed by the ego vehicle and what **action** should the ego vehicle take?...(second, third)",
+    "A": "**Firstly**, notice that **black sedan** at right camera. The object is **stationary**, so the ego vehicle should **turn left**.\n\n **Secondly**, notice that **brown jeep** at left camera. The object is **moving forward**, so the ego vehicle should **turn left**.\n\n **Thirdly**, notice that **white van** at front camera. The object is **stationary**, so the ego vehicle should **turn left**.",
+    "img": ["./static/images/{corruption}/n008-2018-05-21-11-06-59-0400__CAM_FRONT_LEFT__1526915264904917.jpg",
+            "./static/images/{corruption}/n008-2018-05-21-11-06-59-0400__CAM_FRONT__1526915264912465.jpg",
+            "./static/images/{corruption}/n008-2018-05-21-11-06-59-0400__CAM_FRONT_RIGHT__1526915264919956.jpg",
+            "./static/images/{corruption}/n008-2018-05-21-11-06-59-0400__CAM_BACK_LEFT__1526915264947478.jpg",
+            "./static/images/{corruption}/n008-2018-05-21-11-06-59-0400__CAM_BACK__1526915264937570.jpg",
+            "./static/images/{corruption}/n008-2018-05-21-11-06-59-0400__CAM_BACK_RIGHT__1526915264927813.jpg"
+            ],
+    "text-only-img": ["./static/images/text-only/black_image.png",
+                        "./static/images/text-only/black_image.png",
+                        "./static/images/text-only/black_image.png",
+                        "./static/images/text-only/black_image.png",
+                        "./static/images/text-only/black_image.png",
+                        "./static/images/text-only/black_image.png"
+    ]
+    }

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Are VLMs Ready for Autonomous Driving? An Empirical Study from the Reliability, Data, and Metric Perspectives">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Are VLMs Ready for Autonomous Driving? An Empirical Study from the Reliability, Data, and Metric Perspectives</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Are VLMs Ready for Autonomous Driving? An Empirical Study from the Reliability, Data, and Metric Perspectives</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=s1m55YoAAAAJ&hl=zh-CN&oi=ao">Shaoyuan Xie</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=-j1j7TkAAAAJ&hl=zh-CN">Lingdong Kong</a><sup>2,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=kMui170AAAAJ&hl=zh-CN&oi=ao">Yuhao Dong</a><sup>2,4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=dgYJ6esAAAAJ&hl=zh-CN&oi=ao">Sima Chonghao</a><sup>2,5</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=QDXADSEAAAAJ&hl=zh-CN&oi=ao">Wenwei Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=lcsu7m8AAAAJ&hl=zh-CN&oi=ao">Qi Alfred Chen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=lc45xlcAAAAJ&hl=zh-CN&oi=ao">Ziwei Liu</a><sup>4</sup>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=lSDISOcAAAAJ&hl=zh-CN&oi=ao">Liang Pan</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, Irvine,</span>
+            <span class="author-block"><sup>2</sup>Shanghai AI Laboratory</span>
+            <span class="author-block"><sup>3</sup>National University of Singapore</span>
+            <span class="author-block"><sup>4</sup>S-Lab, Nanyang Technological University</span>
+            <span class="author-block"><sup>5</sup>The University of Hong Kong</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Demo</h2>
+    <div class="columns">
+      <!-- Sidebar -->
+      <div class="column is-one-quarter">
+        <aside class="menu">
+          <p class="menu-label">Case</p>
+          <div class="select is-fullwidth">
+            <select id="caseSelector">
+              <option value="case1">Case 1</option>
+              <option value="case2">Case 2</option>
+              <!-- <option value="case3">Case 3</option> -->
+              <!-- <option value="case4">Case 4</option> -->
+            </select>
+          </div>
+
+          <p class="menu-label">Model</p>
+          <div class="select is-fullwidth">
+            <select id="modelSelector">
+              <option value="gpt-4o">GPT-4o</option>
+              <!-- <option value="phi-3.5">Phi-3.5</option> -->
+              <!-- <option value="llava-1.5-13b">LLaVA 1.5 13B</option> -->
+              <!-- <option value="internvl">InternVL</option> -->
+              <option value="qwen-72b">Qwen 72B</option>
+              <!-- <option value="dolphin">Dolphin</option> -->
+              <option value="drivelm">DriveLM</option>
+            </select>
+          </div>
+
+          <p class="menu-label">Corruption</p>
+          <div class="select is-fullwidth">
+            <select id="corruptionSelector">
+              <option value="clean">Clean</option>
+              <option value="text-only">Text-only</option>
+              <!-- <option value="bright">Bright</option> -->
+              <!-- <option value="dark">Dark</option> -->
+              <option value="snow">Snow</option>
+              <!-- <option value="fog">Fog</option> -->
+              <!-- <option value="rain">Rain</option> -->
+              <!-- <option value="lens">Lens</option> -->
+              <!-- <option value="water">Water</option> -->
+              <option value="saturate">Saturate</option>
+              <option value="motion">Motion</option>
+              <!-- <option value="zoom">Zoom</option> -->
+              <!-- <option value="bit">Bit</option> -->
+              <!-- <option value="quant">Quant</option> -->
+              <option value="h265">H.265</option>
+            </select>
+          </div>
+
+          <p class="menu-label">Prompt</p>
+          <div class="select is-fullwidth">
+            <select id="promptSelector">
+              <option value="baseline">Baseline</option>
+              <option value="rubric-aware">Rubric-aware</option>
+              <option value="question-aware">Question-aware</option>
+              <option value="context-aware">Context-aware</option>
+            </select>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Content Area -->
+      <div class="column">
+        <div id="contentBox" class="content">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  caseSelector.addEventListener('change', () => {
+    const selectedCase = caseSelector.value;
+    const contextAwareOption = promptSelector.querySelector('option[value="context-aware"]');
+
+    if (selectedCase === 'case2') {
+      contextAwareOption.disabled = true;
+      if (promptSelector.value === 'context-aware') {
+        promptSelector.value = 'baseline';
+      }
+    } else {
+      contextAwareOption.disabled = false;
+    }
+  });
+
+  // Trigger change event to set initial state
+  caseSelector.dispatchEvent(new Event('change'));
+</script>
+
+<script>
+  const modelSelector = document.getElementById('modelSelector');
+  const corruptionSelector = document.getElementById('corruptionSelector');
+  const promptSelector = document.getElementById('promptSelector');
+  const caseSelector = document.getElementById('caseSelector');
+  const contentBox = document.getElementById('contentBox');
+  
+  async function fetchCaseData(caseName) {
+    try {
+      const response = await fetch(`./static/demos/cases/${caseName}.json`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching case data:', error);
+      throw error;
+    }
+  }
+
+  async function fetchModelOutput(caseName, model, corruption) {
+    const modelLower = model.toLowerCase();
+    const filePath = `./static/demos/res/${caseName}-${modelLower}-${corruption}.json`;
+    try {
+      const response = await fetch(filePath);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching model output:', error);
+      throw error;
+    }
+  }
+
+  function highlightCoordinates(text, color) {
+    return text
+      .replace(/\*\*([^*]+)\*\*/g, `<strong style="color: ${color};">$1</strong>`)
+      .replace(/\n/g, '<br>');
+  }
+  
+  async function updateContent() {
+    const model = modelSelector.value;
+    const corruption = corruptionSelector.value;
+    const prompt = promptSelector.value;
+    const caseOption = caseSelector.value;
+  
+    contentBox.innerHTML = '';
+  
+    try {
+      // Fetch data for the selected case
+      const caseData = await fetchCaseData(caseOption);
+  
+      // Fetch model output
+      const modelOutput = await fetchModelOutput(caseOption, model, corruption);
+
+      // Determine the image path based on the corruption choice
+      let imgPath = caseData.img;
+      if (corruption === 'text-only') {
+        imgPath = caseData['text-only-img'];
+      } else {
+        if (Array.isArray(imgPath)) {
+          imgPath = imgPath.map(path => path.replace('{corruption}', corruption));
+        } else {
+          imgPath = imgPath.replace('{corruption}', corruption);
+        }
+      }
+
+      // Add the image content from the JSON file in a 2x3 layout if there are 6 images
+      const images = Array.isArray(imgPath) ? imgPath : [imgPath];
+      const imageContainer = document.createElement('div');
+      imageContainer.className = 'columns is-multiline is-centered';
+  
+      images.forEach((imgSrc, index) => {
+        const imageColumn = document.createElement('div');
+        imageColumn.className = images.length === 1 ? 'column is-half' : 'column is-one-third';
+        imageColumn.innerHTML = `
+          <img src="${imgSrc}" alt="Case Image ${index + 1}" style="width: 100%; max-width: 500px;">
+        `;
+        imageContainer.appendChild(imageColumn);
+      });
+  
+      contentBox.appendChild(imageContainer);
+  
+      // Add static icons for the rows (icon1, icon2, icon3, icon4)
+      for (let i = 1; i <= 4; i++) {
+        const row = document.createElement('div');
+        row.className = 'columns';
+  
+        const iconColumn = document.createElement('div');
+        iconColumn.className = 'column is-one-quarter';
+        iconColumn.innerHTML = `<img src="./static/images/icon${i}.png" alt="Icon ${i}" style="width: 30%; max-width: 100px;">`;
+  
+        const textColumn = document.createElement('div');
+        textColumn.className = 'column';
+        textColumn.style = 'max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;';
+        if (i === 1) {
+          textColumn.innerHTML = `
+            <p style="background-color: rgb(238,244,250); color: rgb(51,94,150); margin: 0; padding: 10px;"><strong>Question:</strong> ${highlightCoordinates(caseData.Q, 'rgb(51,94,150)')}</p>
+          `;
+        } else if (i === 2) {
+          textColumn.innerHTML = `
+            <p style="background-color: rgb(222,241,211); color: rgb(76,124,49); margin: 0; padding: 10px;"><strong>Answer:</strong> ${highlightCoordinates(modelOutput.A, 'rgb(76,124,49)')}</p>
+          `;
+        } else if (i === 3) {
+          textColumn.innerHTML = `
+            <p style="background-color: rgb(250,224,160); color: rgb(224,146,53); margin: 0; padding: 10px;"><strong>GT:</strong> ${highlightCoordinates(caseData.A, 'rgb(224,146,53)')}</p>
+          `;
+        } else {
+          textColumn.innerHTML = `
+            <p style="background-color: rgb(236,208,236); color: rgb(110,39,107); margin: 0; padding: 10px;"><strong>Evaluator:</strong> ${highlightCoordinates(modelOutput[prompt], 'rgb(110,39,107)')}</p>
+          `;
+        }
+  
+        row.appendChild(iconColumn);
+        row.appendChild(textColumn);
+        contentBox.appendChild(row);
+      }
+  
+    } catch (error) {
+      contentBox.innerHTML = '<p class="has-text-danger">Failed to load the selected case data.</p>';
+    }
+  }
+  
+  modelSelector.addEventListener('change', updateContent);
+  corruptionSelector.addEventListener('change', updateContent);
+  promptSelector.addEventListener('change', updateContent);
+  caseSelector.addEventListener('change', updateContent);
+  
+  // Initialize content
+  updateContent();
+</script>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The rapid advancements in Vision-Language Models (VLMs) have sparked significant 
+            interest in their application to autonomous driving, with a focus on achieving 
+            interpretable driving decisions through natural language interactions. In this work, 
+            we question the fundamental assumption that VLMs inherently provide visual-grounded 
+            explanations in driving contexts thus improving driving interpretability. 
+            The assumption has been widely acknowledged yet systematically examined.
+          </p>
+          <p>
+            Through extensive experiments across 17 conditions (including clean image, 
+            corrupted image, and text-only inputs), 12 models, and 5 task domains, 
+            we comprehensively investigate the reliability of VLMs' visual-grounded 
+            explanations in driving scenarios. Our findings reveal that VLMs frequently 
+            fabricate plausible driving responses from general knowledge or subtle text cues, 
+            especially in scenarios with degraded or absent visual information.
+          </p>
+          <p>
+            However, the phenomenon is long-hiding due to significant problems 
+            in terms of dataset imbalances, and unreliable evaluations within 
+            current driving-with-language benchmarks, which fail to effectively assess 
+            the contextual and safety-oriented requirements of autonomous driving tasks. 
+            Instead of pushing for the state-of-the-art model under problematical setups, 
+            our works highlight the need to rethink the current dataset and metric designs 
+            that better capture the visual-grounded reliability in VLMs for trustworthy 
+            real-world autonomous driving.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Are VLMs Ready for Autonomous Driving? An Empirical Study from the Reliability, Data, and Metric Perspectives},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

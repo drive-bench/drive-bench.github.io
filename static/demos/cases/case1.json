@@ -1,0 +1,6 @@
+{
+"Q": "What is the moving status of object **(c2,CAM_FRONT,0.4651,0.5658)**? Please select the correct answer from the following options:\n**A. Turn left**. **B. Going ahead**. **C. Turn right**.",
+"A": "**A. Turn left**",
+"img": "./static/images/{corruption}/n008-2018-07-27-12-07-38-0400__CAM_FRONT__1532708062612404.jpg",
+"text-only-img": "./static/images/text-only/black_image.png"
+}
