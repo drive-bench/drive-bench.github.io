@@ -151,50 +151,44 @@
               <!-- PDF Link. -->
               <span class="link-block">
                 <a href="" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
+                   class="external-link button is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span><b>Paper</b></span>
                 </a>
               </span>
               &nbsp;
               <span class="link-block">
                 <a href="" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
+                   class="external-link button is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span><b>arXiv</b></span>
                 </a>
               </span>
               &nbsp;
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/drive-bench/toolkit" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>Toolkit</span>
+                  <span><b>Toolkit</b></span>
                   </a>
               </span>
               &nbsp;
               <!-- Dataset Link. -->
               <span class="link-block">
                 <a href="https://huggingface.co/datasets/drive-bench/arena" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fa fa-database"></i></span>
-                  <span>Dataset</span>
+                   class="external-link button is-dark">
+                  <span class="icon"><i class="fa fa-database" aria-hidden="true"></i></span>
+                  <span><b>Dataset</b></span>
                   </a>
               </span>
               &nbsp;
-              <!-- Dataset Link. -->
+              <!-- Leaderboard Link. -->
               <span class="link-block">
                 <a href="" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Leaderboard</span>
+                   class="external-link button is-dark">
+                  <span class="icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></span>
+                  <span><b>Leaderboard</b></span>
                   </a>
               </span>
             </div>
@@ -223,16 +217,12 @@
             we question the fundamental assumption that VLMs inherently provide visual-grounded 
             explanations in driving contexts thus improving driving interpretability. 
             The assumption has been widely acknowledged yet systematically examined.
-          </p>
-          <p>
             Through extensive experiments across 17 conditions (including clean image, 
             corrupted image, and text-only inputs), 12 models, and 5 task domains, 
             we comprehensively investigate the reliability of VLMs' visual-grounded 
             explanations in driving scenarios. Our findings reveal that VLMs frequently 
             fabricate plausible driving responses from general knowledge or subtle text cues, 
             especially in scenarios with degraded or absent visual information.
-          </p>
-          <p>
             However, the phenomenon is long-hiding due to significant problems 
             in terms of dataset imbalances, and unreliable evaluations within 
             current driving-with-language benchmarks, which fail to effectively assess 
@@ -250,10 +240,33 @@
 
 
 
+<br/>
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">DriveBench: Driving with VLMs</h2>
+    <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <img src="static/figures/bench.png" style="width:80%"
+          class="pipeline image" alt="benchmark"/>
+      <br/>
+      <p>Overview of ...</p>
+    </div>
+  </div>
+</div>
+
+
+
+<br/>
+
+
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Demo</h2>
+    <h2 class="title is-3 has-text-centered">
+      <span class="icon"><i class="fas fa-desktop"></i></span> Interactive Demo
+    </h2>
     <div class="columns">
       <!-- Sidebar -->
       <div class="column is-one-quarter">
@@ -317,12 +330,48 @@
       <!-- Content Area -->
       <div class="column">
         <div id="contentBox" class="content">
-          <!-- Dynamic content will be inserted here -->
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+
+<br/><br/><br/>
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Benchmark Study</h2>
+    <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <img src="static/figures/examples_gpt4o_1.png" style="width:78%"
+          class="pipeline image" alt="benchmark"/>
+      <br/>
+      <p>Example of ...</p>
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <img src="static/figures/examples_gpt4o_2.png" style="width:78%"
+          class="pipeline image" alt="benchmark"/>
+      <br/>
+      <p>Example of ...</p>
+    </div>
+  </div>
+</div>
+
+
+
+<br/>
+
+
+
+
+
+
 
 
 <script>
