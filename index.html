@@ -268,7 +268,7 @@
       <img src="static/figures/bench.png" style="width:80%"
           class="pipeline image" alt="benchmark"/>
       <br/>
-      <p>Overview of ...</p>
+      <p><strong>Overview of key features and configurations in</strong> <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span>. Our benchmark encompasses four mainstream driving tasks under <strong>17</strong> settings (clean, corrupted, and text-only visual inputs). The benchmark has <strong>19,200</strong> images and <strong>20,498</strong> QA pairs in total, spanning across <strong>3</strong> question types.</p>
     </div>
   </div>
 </div>
@@ -621,7 +621,7 @@
             </tbody>
           </table>
           <span>
-            <b>Table 1.</b> Summary of ...
+            <b>Table 1.</b> <strong>Evaluations of VLMs across different driving tasks</strong> (perception, prediction, planning, and behavior). <span style="color: rgb(0, 176, 80);">Clean</span> represents clean image inputs. <span style="color: rgb(192, 0, 0);">Corr.</span> represents corruption image inputs, averaged across fifteen corruptions. <span style="color: rgb(66, 133, 244);">T.O.</span> represents text-only evaluation. For humans, we only evaluate MCQ questions in perception and behavior tasks. The evaluations are based on GPT scores, where we tailored detailed rubrics for each task and question type.
           </span>
         </div>
   </div>
@@ -776,7 +776,7 @@
   
         const iconColumn = document.createElement('div');
         iconColumn.className = 'column is-one-quarter';
-        iconColumn.innerHTML = `<img src="./static/images/icon${i}.png" alt="Icon ${i}" style="width: 30%; max-width: 100px;">`;
+        iconColumn.innerHTML = `<img src="./static/images/icon${i}.png" alt="Icon ${i}" style="width: 30%; max-width: 100px; float: right;">`;
   
         const textColumn = document.createElement('div');
         textColumn.className = 'column';
