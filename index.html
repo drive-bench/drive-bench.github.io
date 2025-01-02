@@ -127,8 +127,6 @@
             </span>
           </div>
 
-          <br/>
-
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <sup>1</sup>University of California, Irvine&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -357,6 +355,256 @@
 <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
     <h2 class="title is-3">Benchmark Study</h2>
+    
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-hoverable">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Size</th>
+                <th>Type</th>
+                <th>Perception (Clean)</th>
+                <th>Perception (Corr.)</th>
+                <th>Perception (T.O.)</th>
+                <th>Prediction (Clean)</th>
+                <th>Prediction (Corr.)</th>
+                <th>Prediction (T.O.)</th>
+                <th>Planning (Clean)</th>
+                <th>Planning (Corr.)</th>
+                <th>Planning (T.O.)</th>
+                <th>Behavior (Clean)</th>
+                <th>Behavior (Corr.)</th>
+                <th>Behavior (T.O.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Human</td>
+                <td>-</td><td>-</td><td>47.67</td><td>38.32</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>69.51</td><td>54.09</td><td>-</td>
+              </tr>
+              <tr>
+                <td>GPT-4o</td>
+                <td>-</td>
+                <td>Commercial</td>
+                <td>35.37</td>
+                <td>35.25</td>
+                <td>36.48</td>
+                <td>51.30</td>
+                <td>49.94</td>
+                <td>49.05</td>
+                <td>75.75</td>
+                <td>75.36</td>
+                <td>73.21</td>
+                <td>45.40</td>
+                <td>44.33</td>
+                <td>50.03</td>
+              </tr>
+              <tr>
+                <td>LLaVA-1.5</td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>23.22</td>
+                <td>22.95</td>
+                <td>22.31</td>
+                <td>22.02</td>
+                <td>17.54</td>
+                <td>14.64</td>
+                <td>29.15</td>
+                <td>31.51</td>
+                <td>32.45</td>
+                <td>13.60</td>
+                <td>13.62</td>
+                <td>14.91</td>
+              </tr>
+              <tr>
+                <td>LLaVA-1.5</td>
+                <td>13B</td>
+                <td>Open</td>
+                <td>23.35</td>
+                <td>23.37</td>
+                <td>22.37</td>
+                <td>36.98</td>
+                <td>37.78</td>
+                <td>23.98</td>
+                <td>34.26</td>
+                <td>34.99</td>
+                <td>38.85</td>
+                <td>32.99</td>
+                <td>32.43</td>
+                <td>32.79</td>
+              </tr>
+              <tr>
+                <td>LLaVA-NeXT</td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>24.15</td>
+                <td>19.62</td>
+                <td>13.86</td>
+                <td>35.07</td>
+                <td>35.89</td>
+                <td>28.36</td>
+                <td>45.27</td>
+                <td>44.36</td>
+                <td>27.58</td>
+                <td>48.16</td>
+                <td>39.44</td>
+                <td>11.92</td>
+              </tr>
+              <tr>
+                <td>InternVL2</td>
+                <td>8B</td>
+                <td>Open</td>
+                <td>32.36</td>
+                <td>32.68</td>
+                <td>33.60</td>
+                <td>45.52</td>
+                <td>37.93</td>
+                <td>48.89</td>
+                <td>53.27</td>
+                <td>55.25</td>
+                <td>34.56</td>
+                <td>54.58</td>
+                <td>40.78</td>
+                <td>20.14</td>
+              </tr>
+              <tr>
+                <td>Phi-3</td>
+                <td>4.2B</td>
+                <td>Open</td>
+                <td>22.88</td>
+                <td>23.93</td>
+                <td>28.26</td>
+                <td>40.11</td>
+                <td>37.27</td>
+                <td>22.61</td>
+                <td>60.03</td>
+                <td>61.31</td>
+                <td>46.88</td>
+                <td>45.20</td>
+                <td>44.57</td>
+                <td>28.22</td>
+              </tr>
+              <tr>
+                <td>Phi-3.5</td>
+                <td>4.2B</td>
+                <td>Open</td>
+                <td>27.52</td>
+                <td>27.51</td>
+                <td>28.26</td>
+                <td>45.13</td>
+                <td>38.21</td>
+                <td>4.92</td>
+                <td>31.91</td>
+                <td>28.36</td>
+                <td>46.30</td>
+                <td>37.89</td>
+                <td>49.13</td>
+                <td>39.16</td>
+              </tr>
+              <tr>
+                <td>Oryx</td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>17.02</td>
+                <td>15.97</td>
+                <td>18.47</td>
+                <td>48.13</td>
+                <td>46.63</td>
+                <td>12.77</td>
+                <td>53.57</td>
+                <td>55.76</td>
+                <td>48.26</td>
+                <td>33.92</td>
+                <td>33.81</td>
+                <td>23.94</td>
+              </tr>
+              <tr>
+                <td>Qwen2-VL</td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>28.99</td>
+                <td>27.85</td>
+                <td>35.16</td>
+                <td>37.89</td>
+                <td>39.55</td>
+                <td>37.77</td>
+                <td>57.04</td>
+                <td>54.78</td>
+                <td>41.66</td>
+                <td>49.07</td>
+                <td>47.68</td>
+                <td>54.48</td>
+              </tr>
+              <tr>
+                <td>Qwen2-VL</td>
+                <td>72B</td>
+                <td>Open</td>
+                <td>30.13</td>
+                <td>26.92</td>
+                <td>17.70</td>
+                <td>49.35</td>
+                <td>43.49</td>
+                <td>5.57</td>
+                <td>61.30</td>
+                <td>63.07</td>
+                <td>53.35</td>
+                <td>51.26</td>
+                <td>49.78</td>
+                <td>39.46</td>
+              </tr>
+              <tr>
+                <td>DriveLM</td>
+                <td>7B</td>
+                <td>Specialist</td>
+                <td>16.85</td>
+                <td>16.00</td>
+                <td>8.75</td>
+                <td>44.33</td>
+                <td>39.71</td>
+                <td>4.70</td>
+                <td>68.71</td>
+                <td>67.60</td>
+                <td>65.24</td>
+                <td>42.78</td>
+                <td>40.37</td>
+                <td>27.83</td>
+              </tr>
+              <tr>
+                <td>Dolphins</td>
+                <td>7B</td>
+                <td>Specialist</td>
+                <td>9.59</td>
+                <td>10.84</td>
+                <td>11.01</td>
+                <td>32.66</td>
+                <td>29.88</td>
+                <td>39.98</td>
+                <td>52.91</td>
+                <td>53.77</td>
+                <td>60.98</td>
+                <td>8.81</td>
+                <td>8.25</td>
+                <td>11.92</td>
+              </tr>
+            </tbody>
+          </table>
+          <span>
+            <b>Table 1.</b> Summary of ...
+          </span>
+        </div>
+  </div>
+</div>
+
+
+
+<br/><br/><br/>
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Benchmark Examples</h2>
+
     <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
       <img src="static/figures/examples_gpt4o_1.png" style="width:78%"
           class="pipeline image" alt="benchmark"/>
