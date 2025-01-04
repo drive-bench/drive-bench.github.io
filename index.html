@@ -258,28 +258,53 @@
 
 
 
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">
-      <span class="icon"><i class="fas fa-bus"></i></span>&thinsp;&thinsp;<span style="color: rgb(66, 133, 244);">Drive</span><span style="color: rgb(192, 0, 0);">Bench</span>: Driving with VLMs
-    </h2>
-    <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-      <img src="static/figures/bench.png" style="width:80%"
-          class="pipeline image" alt="benchmark"/>
-      <br/>
-      <p><strong>Overview of key features and configurations in</strong> <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span>. Our benchmark encompasses four mainstream driving tasks under <strong>17</strong> settings (clean, corrupted, and text-only visual inputs). The benchmark has <strong>19,200</strong> images and <strong>20,498</strong> QA pairs in total, spanning across <strong>3</strong> question types.</p>
-    </div><hr>
+<section class="section" style="margin-top: -10px;">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">
+        <span class="icon"><i class="fas fa-bus"></i></span>&thinsp;&thinsp;<span style="color: rgb(66, 133, 244);">Drive</span><span style="color: rgb(192, 0, 0);">Bench</span>: Driving with VLMs
+      </h2>
+      <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <img src="static/figures/bench.png" style="width:80%"
+            class="pipeline image" alt="benchmark"/>
+        <br/>
+        <p><strong>Overview of key features and configurations in</strong> <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span>. Our benchmark encompasses four mainstream driving tasks under <strong>17</strong> settings (clean, corrupted, and text-only visual inputs). The benchmark has <strong>19,200</strong> images and <strong>20,498</strong> QA pairs in total, spanning across <strong>3</strong> question types.</p>
+      </div><hr>
+    </div>
   </div>
-</div>
+</section>
 
+
+
+<section class="section" style="margin-top: -50px;"></section>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" style="display: flex; align-items: center;">
+        <!-- Left Column for the Image -->
+        <div class="column is-half" style="text-align: center;">
+          <img src="static/figures/teaser.jpg" style="max-width: 100%; height: auto;" />
+        </div>
+        <!-- Right Column for the Text -->
+        <div class="column is-half">
+          <div class="content has-text-justified" style="padding-left: 15px;">
+            <h2 class="title is-3">
+              <span class="icon"><i class="fa fa-question-circle"></i></span>&thinsp; Are Existing VLMs Ready for Autonomous Driving?
+            </h2>
+            <p>
+              We study this problem from perspectives on reliability, data, and metrics. 
+              We find existing VLMs tend to fabricate quality answers to driving questions when visual information is absent. The fabricated answers can bypass current metrics, even GPT scores, due to dataset imbalance, lack of context dataset, and problematical evaluation protocols. 
+              Our observations challenge the passive assumption that VLMs are more reliable than task-specific models in driving decisions because of visual-grounded interpretable responses.</p>
+          </div>
+        </div>
+      </div><hr>
+    </div>
+  </section>
 
 
 
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">
-      Interactive Demo
+      <span class="icon"><i class="fas fa-child"></i></span>&thinsp;Interactive Demo
     </h2>
     <div class="columns">
       <!-- Sidebar -->
@@ -358,8 +383,9 @@
 
 <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
-    <h2 class="title is-3">Benchmark Study</h2>
-    
+    <h2 class="title is-3">
+      <span class="icon"><i class="fa fa-subway"></i></span>&thinsp; Benchmark Study
+    </h2>
         <div class="table-container">
           <table class="table is-bordered is-striped is-hoverable">
             <thead>
@@ -367,18 +393,18 @@
                 <th>Model</th>
                 <th>Size</th>
                 <th>Type</th>
-                <th><img src="static/icons/perception.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/perception.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/perception.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
-                <th><img src="static/icons/prediction.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/prediction.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/prediction.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
-                <th><img src="static/icons/planning.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/planning.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/planning.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
-                <th><img src="static/icons/behavior.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/behavior.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/behavior.png" alt="Human Icon" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/perception.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/perception.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/perception.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/prediction.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/prediction.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/prediction.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/planning.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/planning.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/planning.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/behavior.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/behavior.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/behavior.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
               </tr>
             </thead>
             <tbody>
@@ -406,7 +432,7 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
               </tr>
               <tr>
-                <td><a href="" target="">GPT-4o</a></td>
+                <td><a>GPT-4o</a></td>
                 <td>-</td>
                 <td>Commercial</td>
                 <td>35.37</td>
@@ -426,7 +452,7 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
               </tr>
               <tr>
-                <td><a href="" target="">LLaVA-1.5</a></td>
+                <td><a>LLaVA-1.5</a></td>
                 <td>7B</td>
                 <td>Open</td>
                 <td>23.22</td>
@@ -443,7 +469,7 @@
                 <td>14.91</td>
               </tr>
               <tr>
-                <td><a href="" target="">LLaVA-1.5</a></td>
+                <td><a>LLaVA-1.5</a></td>
                 <td>13B</td>
                 <td>Open</td>
                 <td>23.35</td>
@@ -460,7 +486,7 @@
                 <td>32.79</td>
               </tr>
               <tr>
-                <td><a href="" target="">LLaVA-NeXT</a></td>
+                <td><a>LLaVA-NeXT</a></td>
                 <td>7B</td>
                 <td>Open</td>
                 <td>24.15</td>
@@ -477,7 +503,7 @@
                 <td>11.92</td>
               </tr>
               <tr>
-                <td><a href="" target="">InternVL2</a></td>
+                <td><a>InternVL2</a></td>
                 <td>8B</td>
                 <td>Open</td>
                 <td>32.36</td>
@@ -494,7 +520,7 @@
                 <td>20.14</td>
               </tr>
               <tr>
-                <td><a href="" target="">Phi-3</a></td>
+                <td><a>Phi-3</a></td>
                 <td>4.2B</td>
                 <td>Open</td>
                 <td>22.88</td>
@@ -511,7 +537,7 @@
                 <td>28.22</td>
               </tr>
               <tr>
-                <td><a href="" target="">Phi-3.5</a></td>
+                <td><a>Phi-3.5</a></td>
                 <td>4.2B</td>
                 <td>Open</td>
                 <td>27.52</td>
@@ -528,7 +554,7 @@
                 <td>39.16</td>
               </tr>
               <tr>
-                <td><a href="" target="">Oryx</a></td>
+                <td><a>Oryx</a></td>
                 <td>7B</td>
                 <td>Open</td>
                 <td>17.02</td>
@@ -545,7 +571,7 @@
                 <td>23.94</td>
               </tr>
               <tr>
-                <td><a href="" target="">Qwen2-VL</a></td>
+                <td><a>Qwen2-VL</a></td>
                 <td>7B</td>
                 <td>Open</td>
                 <td>28.99</td>
@@ -562,7 +588,7 @@
                 <td>54.48</td>
               </tr>
               <tr>
-                <td><a href="" target="">Qwen2-VL</a></td>
+                <td><a>Qwen2-VL</a></td>
                 <td>72B</td>
                 <td>Open</td>
                 <td>30.13</td>
@@ -582,7 +608,7 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
               </tr>
               <tr>
-                <td><a href="https://github.com/OpenDriveLab/DriveLM" target="_blank">DriveLM</a></td>
+                <td><a>DriveLM</a></td>
                 <td>7B</td>
                 <td>Specialist</td>
                 <td>16.85</td>
@@ -599,7 +625,7 @@
                 <td>27.83</td>
               </tr>
               <tr>
-                <td><a href="" target="">Dolphins</a></td>
+                <td><a>Dolphins</a></td>
                 <td>7B</td>
                 <td>Specialist</td>
                 <td>9.59</td>
@@ -618,7 +644,7 @@
             </tbody>
           </table>
           <span>
-            <b>Table 1.</b> <strong>Evaluations of VLMs across different driving tasks</strong> (perception, prediction, planning, and behavior). <span style="color: rgb(0, 176, 80);">Clean</span> represents clean image inputs. <span style="color: rgb(192, 0, 0);">Corr.</span> represents corruption image inputs, averaged across fifteen corruptions. <span style="color: rgb(66, 133, 244);">T.O.</span> represents text-only evaluation. For humans, we only evaluate MCQ questions in perception and behavior tasks. The evaluations are based on GPT scores, where we tailored detailed rubrics for each task and question type.
+            <b>Table.</b> <strong>Evaluations of VLMs across different driving tasks</strong> (perception, prediction, planning, and behavior). <span style="color: rgb(0, 176, 80);">Clean</span> represents clean image inputs. <span style="color: rgb(192, 0, 0);">Corr.</span> represents corruption image inputs, averaged across fifteen corruptions. <span style="color: rgb(66, 133, 244);">T.O.</span> represents text-only evaluation. For humans, we only evaluate MCQ questions in perception and behavior tasks. The evaluations are based on GPT scores, where we tailored detailed rubrics for each task and question type.
           </span>
         </div><hr>
   </div>
@@ -626,7 +652,336 @@
 
 
 
-<br/>
+<br/><br/>
+
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">
+      <span class="icon"><i class="fa fa-cogs"></i></span>&thinsp;&thinsp; Robustness Analysis
+    </h2>
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-hoverable">
+            <thead>
+              <tr>
+                <th rowspan="2">Model</th>
+                <th rowspan="2">Size</th>
+                <th rowspan="2">Type</th>
+                <th colspan="3"><img src="static/icons/weather.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/></span>Weather</th>
+                <th colspan="3"><img src="static/icons/external.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>External</th>
+                <th colspan="3"><img src="static/icons/sensor.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Sensor</th>
+                <th colspan="3"><img src="static/icons/motion.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Motion</th>
+                <th colspan="3"><img src="static/icons/transmission.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Transmission</th>
+              </tr>
+              <tr>
+                <th><span style="color: rgb(66, 133, 244);">MCQ</span></th>
+                <th><span style="color: rgb(192, 0, 0);">VQA</span></th>
+                <th><span style="color: rgb(0, 176, 80);">CAP</span></th>
+                <th><span style="color: rgb(66, 133, 244);">MCQ</span></th>
+                <th><span style="color: rgb(192, 0, 0);">VQA</span></th>
+                <th><span style="color: rgb(0, 176, 80);">CAP</span></th>
+                <th><span style="color: rgb(66, 133, 244);">MCQ</span></th>
+                <th><span style="color: rgb(192, 0, 0);">VQA</span></th>
+                <th><span style="color: rgb(0, 176, 80);">CAP</span></th>
+                <th><span style="color: rgb(66, 133, 244);">MCQ</span></th>
+                <th><span style="color: rgb(192, 0, 0);">VQA</span></th>
+                <th><span style="color: rgb(0, 176, 80);">CAP</span></th>
+                <th><span style="color: rgb(66, 133, 244);">MCQ</span></th>
+                <th><span style="color: rgb(192, 0, 0);">VQA</span></th>
+                <th><span style="color: rgb(0, 176, 80);">CAP</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td><a>GPT-4o</a></td>
+                <td>-</td>
+                <td>Commercial</td>
+                <td>57.20</td>
+                <td>57.28</td>
+                <td>54.90</td>
+                <td>29.25</td>
+                <td>56.60</td>
+                <td>61.98</td>
+                <td>44.25</td>
+                <td>54.95</td>
+                <td>56.53</td>
+                <td>34.25</td>
+                <td>59.20</td>
+                <td>56.25</td>
+                <td>36.83</td>
+                <td>53.95</td>
+                <td>57.57</td>
+              </tr>
+              <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td><a>LLaVA-1.5</a></td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>69.70</td>
+                <td>35.49</td>
+                <td>35.91</td>
+                <td>26.50</td>
+                <td>29.17</td>
+                <td>34.95</td>
+                <td>18.83</td>
+                <td>30.64</td>
+                <td>33.15</td>
+                <td>71.25</td>
+                <td>33.43</td>
+                <td>35.18</td>
+                <td>10.17</td>
+                <td>27.28</td>
+                <td>34.38</td>
+              </tr>
+              <tr>
+                <td><a>LLaVA-1.5</a></td>
+                <td>13B</td>
+                <td>Open</td>
+                <td>61.60</td>
+                <td>39.76</td>
+                <td>37.76</td>
+                <td>15.50</td>
+                <td>34.55</td>
+                <td>37.83</td>
+                <td>24.08</td>
+                <td>35.48</td>
+                <td>36.08</td>
+                <td>79.75</td>
+                <td>36.46</td>
+                <td>36.42</td>
+                <td>15.50</td>
+                <td>32.53</td>
+                <td>34.33</td>
+              </tr>
+              <tr>
+                <td><a>LLaVA-NeXT</a></td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>69.70</td>
+                <td>36.96</td>
+                <td>48.52</td>
+                <td>48.50</td>
+                <td>30.32</td>
+                <td>57.18</td>
+                <td>21.83</td>
+                <td>30.40</td>
+                <td>44.37</td>
+                <td>66.00</td>
+                <td>34.20</td>
+                <td>50.44</td>
+                <td>11.83</td>
+                <td>29.43</td>
+                <td>53.50</td>
+              </tr>
+              <tr>
+                <td><a>InternVL2</a></td>
+                <td>8B</td>
+                <td>Open</td>
+                <td>59.90</td>
+                <td>48.72</td>
+                <td>48.60</td>
+                <td>50.75</td>
+                <td>47.74</td>
+                <td>57.82</td>
+                <td>29.92</td>
+                <td>45.06</td>
+                <td>51.14</td>
+                <td>68.25</td>
+                <td>49.51</td>
+                <td>49.67</td>
+                <td>30.00</td>
+                <td>43.42</td>
+                <td>54.24</td>
+              </tr>
+              <tr>
+                <td><a>Phi-3</a></td>
+                <td>4.2B</td>
+                <td>Open</td>
+                <td>40.00</td>
+                <td>40.59</td>
+                <td>45.61</td>
+                <td>25.00</td>
+                <td>31.44</td>
+                <td>45.99</td>
+                <td>16.83</td>
+                <td>35.58</td>
+                <td>43.71</td>
+                <td>31.25</td>
+                <td>42.92</td>
+                <td>48.43</td>
+                <td>27.67</td>
+                <td>33.04</td>
+                <td>41.35</td>
+              </tr>
+              <tr>
+                <td><a>Phi-3.5</a></td>
+                <td>4.2B</td>
+                <td>Open</td>
+                <td>60.60</td>
+                <td>41.82</td>
+                <td>45.97</td>
+                <td>21.25</td>
+                <td>36.89</td>
+                <td>30.95</td>
+                <td>25.58</td>
+                <td>34.66</td>
+                <td>39.30</td>
+                <td>33.00</td>
+                <td>46.03</td>
+                <td>49.33</td>
+                <td>39.67</td>
+                <td>33.47</td>
+                <td>39.67</td>
+              </tr>
+              <tr>
+                <td><a>Oryx</a></td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>53.20</td>
+                <td>40.43</td>
+                <td>48.95</td>
+                <td>45.00</td>
+                <td>40.68</td>
+                <td>56.06</td>
+                <td>50.50</td>
+                <td>36.71</td>
+                <td>48.55</td>
+                <td>72.50</td>
+                <td>40.01</td>
+                <td>48.33</td>
+                <td>39.67</td>
+                <td>36.98</td>
+                <td>49.87</td>
+              </tr>
+              <tr>
+                <td><a>Qwen2-VL</a></td>
+                <td>7B</td>
+                <td>Open</td>
+                <td>76.70</td>
+                <td>49.33</td>
+                <td>45.12</td>
+                <td>37.50</td>
+                <td>47.62</td>
+                <td>51.24</td>
+                <td>22.83</td>
+                <td>39.45</td>
+                <td>47.23</td>
+                <td>57.00</td>
+                <td>47.40</td>
+                <td>47.74</td>
+                <td>35.83</td>
+                <td>42.31</td>
+                <td>48.60</td>
+              </tr>
+              <tr>
+                <td><a>Qwen2-VL</a></td>
+                <td>72B</td>
+                <td>Open</td>
+                <td>59.80</td>
+                <td>51.05</td>
+                <td>48.55</td>
+                <td>45.50</td>
+                <td>50.57</td>
+                <td>57.25</td>
+                <td>52.25</td>
+                <td>45.89</td>
+                <td>48.59</td>
+                <td>58.25</td>
+                <td>50.85</td>
+                <td>47.88</td>
+                <td>44.83</td>
+                <td>46.23</td>
+                <td>50.50</td>
+              </tr>
+              <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td><a>DriveLM</a></td>
+                <td>7B</td>
+                <td>Specialist</td>
+                <td>21.20</td>
+                <td>42.86</td>
+                <td>20.04</td>
+                <td>21.25</td>
+                <td>37.49</td>
+                <td>21.92</td>
+                <td>9.00</td>
+                <td>36.68</td>
+                <td>15.56</td>
+                <td>22.25</td>
+                <td>42.05</td>
+                <td>17.07</td>
+                <td>17.50</td>
+                <td>39.56</td>
+                <td>10.37</td>
+              </tr>
+              <tr>
+                <td><a>Dolphins</a></td>
+                <td>7B</td>
+                <td>Specialist</td>
+                <td>54.30</td>
+                <td>30.21</td>
+                <td>31.08</td>
+                <td>3.00</td>
+                <td>30.42</td>
+                <td>29.38</td>
+                <td>9.42</td>
+                <td>26.83</td>
+                <td>26.30</td>
+                <td>9.25</td>
+                <td>29.82</td>
+                <td>28.05</td>
+                <td>21.50</td>
+                <td>28.86</td>
+                <td>27.65</td>
+              </tr>
+            </tbody>
+          </table>
+          <span>
+            <b>Table.</b> <strong>Evaluations of VLMs across different driving tasks</strong> (perception, prediction, planning, and behavior). <span style="color: rgb(0, 176, 80);">Clean</span> represents clean image inputs. <span style="color: rgb(192, 0, 0);">Corr.</span> represents corruption image inputs, averaged across fifteen corruptions. <span style="color: rgb(66, 133, 244);">T.O.</span> represents text-only evaluation. For humans, we only evaluate MCQ questions in perception and behavior tasks. The evaluations are based on GPT scores, where we tailored detailed rubrics for each task and question type.
+          </span>
+        </div><hr>
+  </div>
+</div>
+
+
+
+
+<section class="section" style="margin-top: -50px;"></section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class=" column is-full-width has-text-centered">
+        <h2 class="title is-3">
+          <span class="icon"><i class="fa fa-paw"></i></span>&thinsp; GPT4-o Examples
+        </h2>
+      <img src="static/figures/examples_gpt4o_1.png" />
+      <div class="content has-text-justified" style="padding-top: 15px">
+        <p>
+          <b>Figure.</b> Overview of the <span style="color: #FF8E26;"><b>See</b></span><span style="color: #01B1A0;"><b>Ground</b></span> framework. 
+          We first use a 2D-VLM to interpret the query,
+          identifying both the target object (e.g., "laptop") and a context-providing anchor (e.g., "chair with floral
+          pattern"). A dynamic viewpoint is then selected based on the anchor’s position, enabling the capture of a 2D
+          rendered image that aligns with the query’s spatial requirements. Using the Object Lookup Table (OLT), we
+          retrieve the 3D bounding boxes of relevant objects, project them onto the 2D image, and apply visual prompts
+          to mark visible objects, filtering out occlusions. The image with prompts, along with the spatial
+          descriptions and query, are then input into the 2D-VLM for precise localization of the target object.
+          Finally, the 2D-VLM outputs the target object’s ID, and we retrieve its 3D bounding box from the OLT to
+          provide the final, accurate 3D position in the scene.
+        </p>
+      </div>
+      <hr>
+    </div>
+  </div>
+  </div>
+  </section>
 
 
 
