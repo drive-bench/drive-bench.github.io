@@ -300,7 +300,7 @@
   </section>
 
   <br/>
-  
+
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -378,7 +378,63 @@
 
 
 
-<br/>
+<section class="section" style="margin-top: -50px;"></section>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" style="display: flex; align-items: center;">
+        <!-- Left Column for the Text -->
+        <div class="column is-half">
+          <div class="content has-text-justified" style="padding-right: 40px;">
+            <h2 class="title is-3">
+              Challenging Cases in Existing Dataset
+            </h2>
+            <p>
+              (a): The black sedan is turning left, indicated by the turn lights. 
+              (b): The black sedan is turning right. GPT4-o predicts <b>Going Ahead</b> for these two cases. 
+            </p>
+            <p>
+              (c) and (d) are both <b>Turning Right</b>, but GPT4-o fails to locate the objects based on center pixel positions due to the existence of overlapping or occlusion.
+            </p>
+          </div>
+        </div>
+        <!-- Right Column for the Image -->
+        <div class="column is-half" style="text-align: center;">
+          <img src="static/figures/dataset_cases.jpg" style="max-width: 100%; height: auto;" />
+        </div>
+      </div><hr>
+    </div>
+  </section>
+
+
+  <br/>
+
+
+  <section class="section" style="margin-top: -50px;"></section>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" style="display: flex; align-items: center;">
+        <!-- Left Column for the Image -->
+        <div class="column is-half" style="text-align: center;">
+          <img src="static/figures/spatial_distribution.png" style="max-width: 100%; height: auto;" />
+        </div>
+        <!-- Right Column for the Text -->
+        <div class="column is-half">
+          <div class="content has-text-justified" style="padding-left: 40px;">
+            <h2 class="title is-3">
+              Spatial Distribution
+            </h2>
+            <p>
+              We provide the spatial distribution of predictions from Qwen2-VL, under the <b>text-only prompts</b>. 
+              We find that the model can potentially “guess” the MCQ answers without visual information by leveraging plain text cues,
+              e.g., camera and coordinate positions mentioned in the questions.
+            </p>
+          </div>
+        </div>
+      </div><hr>
+    </div>
+  </section>
+
+
+  <br/><br/><br/>
+
 
 
 
