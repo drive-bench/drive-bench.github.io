@@ -302,79 +302,85 @@
   <br/>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">
-      <span class="icon"><i class="fas fa-child"></i></span>&thinsp;Interactive Demo
-    </h2>
-    <div class="columns">
-      <!-- Sidebar -->
-      <div class="column is-one-quarter">
-        <aside class="menu">
-          <p class="menu-label">Case</p>
-          <div class="select is-fullwidth">
-            <select id="caseSelector">
-              <option value="case1">Case 1</option>
-              <option value="case2">Case 2</option>
-              <!-- <option value="case3">Case 3</option> -->
-              <!-- <option value="case4">Case 4</option> -->
-            </select>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">
+        <span class="icon"><i class="fas fa-child"></i></span>&thinsp;Interactive Demo
+      </h2>
+      <div class="columns">
+        <!-- Sidebar (button groups) -->
+        <div class="column is-one-quarter">
+          <div style="margin-bottom: 1rem;">
+            <p class="menu-label">Case</p>
+            <div id="caseButtons" style="display: flex; gap: 0.5rem;"></div>
           </div>
-
-          <p class="menu-label">Model</p>
-          <div class="select is-fullwidth">
-            <select id="modelSelector">
-              <option value="gpt-4o">GPT-4o</option>
-              <!-- <option value="phi-3.5">Phi-3.5</option> -->
-              <!-- <option value="llava-1.5-13b">LLaVA 1.5 13B</option> -->
-              <!-- <option value="internvl">InternVL</option> -->
-              <option value="qwen-72b">Qwen 72B</option>
-              <!-- <option value="dolphin">Dolphin</option> -->
-              <option value="drivelm">DriveLM</option>
-            </select>
+  
+          <div style="margin-bottom: 1rem;">
+            <p class="menu-label">Model</p>
+            <div id="modelButtons" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
           </div>
-
-          <p class="menu-label">Corruption</p>
-          <div class="select is-fullwidth">
-            <select id="corruptionSelector">
-              <option value="clean">Clean</option>
-              <option value="text-only">Text-only</option>
-              <!-- <option value="bright">Bright</option> -->
-              <!-- <option value="dark">Dark</option> -->
-              <option value="snow">Snow</option>
-              <!-- <option value="fog">Fog</option> -->
-              <!-- <option value="rain">Rain</option> -->
-              <!-- <option value="lens">Lens</option> -->
-              <!-- <option value="water">Water</option> -->
-              <option value="saturate">Saturate</option>
-              <option value="motion">Motion</option>
-              <!-- <option value="zoom">Zoom</option> -->
-              <!-- <option value="bit">Bit</option> -->
-              <!-- <option value="quant">Quant</option> -->
-              <option value="h265">H.265</option>
-            </select>
+  
+          <div style="margin-bottom: 1rem;">
+            <p class="menu-label">Corruption</p>
+            <div id="corruptionButtons" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
           </div>
-
-          <p class="menu-label">Prompt</p>
-          <div class="select is-fullwidth">
-            <select id="promptSelector">
-              <option value="baseline">Baseline</option>
-              <option value="rubric-aware">Rubric-aware</option>
-              <option value="question-aware">Question-aware</option>
-              <option value="context-aware">Context-aware</option>
-            </select>
+  
+          <div style="margin-bottom: 1rem;">
+            <p class="menu-label">Prompt</p>
+            <div id="promptButtons" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
           </div>
-        </aside>
-      </div>
-
-      <!-- Content Area -->
-      <div class="column">
-        <div id="contentBox" class="content">
+        </div>
+  
+        <!-- Content Area -->
+        <div class="column">
+          <!-- Images Container -->
+          <div id="imageContainer" class="columns is-multiline is-centered"></div>
+          <hr>
+  
+          <!-- Rows for icons and text -->
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <img src="./static/images/icon1.png" alt="Icon 1" style="width: 30%; max-width: 100px; float: right;">
+            </div>
+            <div class="column" id="questionContainer"
+                 style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
+              <!-- Question text goes here -->
+            </div>
+          </div>
+  
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <img src="./static/images/icon2.png" alt="Icon 2" style="width: 30%; max-width: 100px; float: right;">
+            </div>
+            <div class="column" id="answerContainer"
+                 style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
+              <!-- Model’s answer goes here -->
+            </div>
+          </div>
+  
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <img src="./static/images/icon3.png" alt="Icon 3" style="width: 30%; max-width: 100px; float: right;">
+            </div>
+            <div class="column" id="gtContainer"
+                 style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
+              <!-- Ground-truth answer goes here -->
+            </div>
+          </div>
+  
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <img src="./static/images/icon4.png" alt="Icon 4" style="width: 30%; max-width: 100px; float: right;">
+            </div>
+            <div class="column" id="evaluatorContainer"
+                 style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
+              <!-- Evaluator text goes here -->
+            </div>
+          </div>
         </div>
       </div>
-    </div><hr>
-  </div>
-</section>
+    </div>
+  </section>
 
 
 
@@ -1109,98 +1115,179 @@
 
 
 
-<script>
-  caseSelector.addEventListener('change', () => {
-    const selectedCase = caseSelector.value;
-    const contextAwareOption = promptSelector.querySelector('option[value="context-aware"]');
-
-    if (selectedCase === 'case2') {
-      contextAwareOption.disabled = true;
-      if (promptSelector.value === 'context-aware') {
-        promptSelector.value = 'baseline';
-      }
-    } else {
-      contextAwareOption.disabled = false;
+  <script>
+    /**********************************************************
+     * Global State
+     **********************************************************/
+    let selectedCase = 'case1';
+    let selectedModel = 'gpt-4o';
+    let selectedCorruption = 'clean';
+    let selectedPrompt = 'baseline';
+  
+    let currentCaseData = null;     // Will store Q, A, and image paths
+    let currentModelOutput = null;  // Will store the model's answer + all prompts
+  
+    // For convenience, lists of possible options:
+    const cases = ['case1', 'case2'];
+    const models = ['gpt-4o', 'qwen-72b', 'drivelm'];
+    const corruptions = ['clean', 'text-only', 'snow', 'saturate', 'motion', 'h265'];
+    const prompts = ['baseline', 'rubric-aware', 'question-aware', 'context-aware'];
+  
+    /**********************************************************
+     * Utility Functions
+     **********************************************************/
+    function highlightCoordinates(text, color) {
+      if (!text) return '';
+      return text
+        .replace(/\*\*([^*]+)\*\*/g, `<strong style="color: ${color};">$1</strong>`)
+        .replace(/\n/g, '<br>');
     }
-  });
-
-  // Trigger change event to set initial state
-  caseSelector.dispatchEvent(new Event('change'));
-</script>
-
-<script>
-  const modelSelector = document.getElementById('modelSelector');
-  const corruptionSelector = document.getElementById('corruptionSelector');
-  const promptSelector = document.getElementById('promptSelector');
-  const caseSelector = document.getElementById('caseSelector');
-  const contentBox = document.getElementById('contentBox');
   
-  async function fetchCaseData(caseName) {
-    try {
-      const response = await fetch(`./static/demos/cases/${caseName}.json`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return await response.json();
-    } catch (error) {
-      console.error('Error fetching case data:', error);
-      throw error;
-    }
-  }
-
-  async function fetchModelOutput(caseName, model, corruption) {
-    const modelLower = model.toLowerCase();
-    const filePath = `./static/demos/res/${caseName}-${modelLower}-${corruption}.json`;
-    try {
-      const response = await fetch(filePath);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return await response.json();
-    } catch (error) {
-      console.error('Error fetching model output:', error);
-      throw error;
-    }
-  }
-
-  function highlightCoordinates(text, color) {
-    return text
-      .replace(/\*\*([^*]+)\*\*/g, `<strong style="color: ${color};">$1</strong>`)
-      .replace(/\n/g, '<br>');
-  }
-  
-  async function updateContent() {
-    const model = modelSelector.value;
-    const corruption = corruptionSelector.value;
-    const prompt = promptSelector.value;
-    const caseOption = caseSelector.value;
-  
-    contentBox.innerHTML = '';
-  
-    try {
-      // Fetch data for the selected case
-      const caseData = await fetchCaseData(caseOption);
-  
-      // Fetch model output
-      const modelOutput = await fetchModelOutput(caseOption, model, corruption);
-
-      // Determine the image path based on the corruption choice
-      let imgPath = caseData.img;
-      if (corruption === 'text-only') {
-        imgPath = caseData['text-only-img'];
-      } else {
-        if (Array.isArray(imgPath)) {
-          imgPath = imgPath.map(path => path.replace('{corruption}', corruption));
+    // Helper to highlight the currently selected button
+    function updateButtonStyles(containerId, selectedValue) {
+      const container = document.getElementById(containerId);
+      const buttons = container.querySelectorAll('button');
+      buttons.forEach(btn => {
+        // If button is the selected one
+        if (btn.dataset.value === selectedValue) {
+          btn.style.backgroundColor = 'rgb(66, 133, 244)';
+          btn.style.color = '#fff';
         } else {
-          imgPath = imgPath.replace('{corruption}', corruption);
+          btn.style.backgroundColor = '';
+          btn.style.color = '';
+        }
+      });
+    }
+  
+    // Disable or enable the context-aware prompt button for case2
+    function updateContextAwareButtonState() {
+      const contextAwareBtn = document.querySelector(
+        '#promptButtons button[data-value="context-aware"]'
+      );
+      if (!contextAwareBtn) return;
+  
+      if (selectedCase === 'case2') {
+        // Disable, gray out
+        contextAwareBtn.disabled = true;
+        contextAwareBtn.style.backgroundColor = 'gray';
+        contextAwareBtn.style.color = '#fff';
+      } else {
+        // Enable if not case2
+        contextAwareBtn.disabled = false;
+        // If context-aware is the selected prompt, re-apply highlight
+        updateButtonStyles('promptButtons', selectedPrompt);
+      }
+    }
+  
+    /**********************************************************
+     * Fetching Data
+     **********************************************************/
+    async function fetchCaseData(caseName) {
+      try {
+        const response = await fetch(`./static/demos/cases/${caseName}.json`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+      } catch (error) {
+        console.error('Error fetching case data:', error);
+        throw error;
+      }
+    }
+  
+    async function fetchModelOutput(caseName, model, corruption) {
+      const modelLower = model.toLowerCase();
+      const filePath = `./static/demos/res/${caseName}-${modelLower}-${corruption}.json`;
+      try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+          // If the file is missing or there's an error, throw
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+      } catch (error) {
+        console.error('Error fetching model output:', error);
+        throw error;
+      }
+    }
+  
+    /**********************************************************
+     * Update DOM Functions
+     **********************************************************/
+    // Update only the question and GT from the case data
+    function updateQuestionAndGT() {
+      const questionContainer = document.getElementById('questionContainer');
+      const gtContainer = document.getElementById('gtContainer');
+  
+      if (!currentCaseData) {
+        questionContainer.innerHTML = '<p style="color: red;">No data.</p>';
+        gtContainer.innerHTML = '<p style="color: red;">No data.</p>';
+        return;
+      }
+      questionContainer.innerHTML = `
+        <p style="background-color: rgb(238,244,250); color: rgb(51,94,150); margin: 0; padding: 10px;">
+          <strong>Question:</strong> 
+          ${highlightCoordinates(currentCaseData.Q, 'rgb(51,94,150)')}
+        </p>
+      `;
+      gtContainer.innerHTML = `
+        <p style="background-color: rgb(250,224,160); color: rgb(224,146,53); margin: 0; padding: 10px;">
+          <strong>GT:</strong> 
+          ${highlightCoordinates(currentCaseData.A, 'rgb(224,146,53)')}
+        </p>
+      `;
+    }
+  
+    // Update only the model answer
+    function updateModelAnswer() {
+      const answerContainer = document.getElementById('answerContainer');
+      if (!currentModelOutput) {
+        answerContainer.innerHTML = '<p style="color: red;">No model output.</p>';
+        return;
+      }
+      answerContainer.innerHTML = `
+        <p style="background-color: rgb(222,241,211); color: rgb(76,124,49); margin: 0; padding: 10px;">
+          <strong>Answer:</strong>
+          ${highlightCoordinates(currentModelOutput.A, 'rgb(76,124,49)')}
+        </p>
+      `;
+    }
+  
+    // Update only the evaluator text (depends on the selected prompt)
+    function updateEvaluator() {
+      const evaluatorContainer = document.getElementById('evaluatorContainer');
+      if (!currentModelOutput || !currentModelOutput[selectedPrompt]) {
+        evaluatorContainer.innerHTML = '<p style="color: red;">No evaluator output.</p>';
+        return;
+      }
+      evaluatorContainer.innerHTML = `
+        <p style="background-color: rgb(236,208,236); color: rgb(110,39,107); margin: 0; padding: 10px;">
+          <strong>Evaluator:</strong> 
+          ${highlightCoordinates(currentModelOutput[selectedPrompt], 'rgb(110,39,107)')}
+        </p>
+      `;
+    }
+  
+    // Update images if needed
+    function updateImages() {
+      const imageContainer = document.getElementById('imageContainer');
+      imageContainer.innerHTML = ''; // Clear old images
+  
+      if (!currentCaseData) return;
+  
+      let imgPath = currentCaseData.img;
+      if (selectedCorruption === 'text-only') {
+        imgPath = currentCaseData['text-only-img'];
+      } else {
+        // If the JSON uses placeholders, replace them
+        if (Array.isArray(imgPath)) {
+          imgPath = imgPath.map(path => path.replace('{corruption}', selectedCorruption));
+        } else {
+          imgPath = imgPath.replace('{corruption}', selectedCorruption);
         }
       }
-
-      // Add the image content from the JSON file in a 2x3 layout if there are 6 images
-      const images = Array.isArray(imgPath) ? imgPath : [imgPath];
-      const imageContainer = document.createElement('div');
-      imageContainer.className = 'columns is-multiline is-centered';
   
+      const images = Array.isArray(imgPath) ? imgPath : [imgPath];
       images.forEach((imgSrc, index) => {
         const imageColumn = document.createElement('div');
         imageColumn.className = images.length === 1 ? 'column is-half' : 'column is-one-third';
@@ -1209,57 +1296,124 @@
         `;
         imageContainer.appendChild(imageColumn);
       });
+    }
   
-      contentBox.appendChild(imageContainer);
+    /**********************************************************
+     * Main Update Logic
+     **********************************************************/
+    // 1) If case changes, fetch new case data + new model data.
+    async function handleCaseChange(newCase) {
+      selectedCase = newCase;
   
-      // Add static icons for the rows (icon1, icon2, icon3, icon4)
-      for (let i = 1; i <= 4; i++) {
-        const row = document.createElement('div');
-        row.className = 'columns';
-  
-        const iconColumn = document.createElement('div');
-        iconColumn.className = 'column is-one-quarter';
-        iconColumn.innerHTML = `<img src="./static/images/icon${i}.png" alt="Icon ${i}" style="width: 30%; max-width: 100px; float: right;">`;
-  
-        const textColumn = document.createElement('div');
-        textColumn.className = 'column';
-        textColumn.style = 'max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;';
-        if (i === 1) {
-          textColumn.innerHTML = `
-            <p style="background-color: rgb(238,244,250); color: rgb(51,94,150); margin: 0; padding: 10px;"><strong>Question:</strong> ${highlightCoordinates(caseData.Q, 'rgb(51,94,150)')}</p>
-          `;
-        } else if (i === 2) {
-          textColumn.innerHTML = `
-            <p style="background-color: rgb(222,241,211); color: rgb(76,124,49); margin: 0; padding: 10px;"><strong>Answer:</strong> ${highlightCoordinates(modelOutput.A, 'rgb(76,124,49)')}</p>
-          `;
-        } else if (i === 3) {
-          textColumn.innerHTML = `
-            <p style="background-color: rgb(250,224,160); color: rgb(224,146,53); margin: 0; padding: 10px;"><strong>GT:</strong> ${highlightCoordinates(caseData.A, 'rgb(224,146,53)')}</p>
-          `;
-        } else {
-          textColumn.innerHTML = `
-            <p style="background-color: rgb(236,208,236); color: rgb(110,39,107); margin: 0; padding: 10px;"><strong>Evaluator:</strong> ${highlightCoordinates(modelOutput[prompt], 'rgb(110,39,107)')}</p>
-          `;
-        }
-  
-        row.appendChild(iconColumn);
-        row.appendChild(textColumn);
-        contentBox.appendChild(row);
+      // If currently set to context-aware and we switch to case2 => revert to baseline
+      if (selectedCase === 'case2' && selectedPrompt === 'context-aware') {
+        selectedPrompt = 'baseline';
+        updateButtonStyles('promptButtons', selectedPrompt);
       }
   
-    } catch (error) {
-      contentBox.innerHTML = '<p class="has-text-danger">Failed to load the selected case data.</p>';
+      // Highlight the new selection
+      updateButtonStyles('caseButtons', selectedCase);
+  
+      // Fetch the new case data
+      try {
+        currentCaseData = await fetchCaseData(selectedCase);
+        updateQuestionAndGT();
+        updateImages();
+      } catch (err) {
+        currentCaseData = null;
+        console.error(err);
+      }
+  
+      // Then fetch model output
+      try {
+        currentModelOutput = await fetchModelOutput(selectedCase, selectedModel, selectedCorruption);
+        updateModelAnswer();
+        updateEvaluator();
+      } catch (err) {
+        currentModelOutput = null;
+        console.error(err);
+      }
+  
+      // Disable/enable context-aware prompt if it's case2
+      updateContextAwareButtonState();
     }
-  }
   
-  modelSelector.addEventListener('change', updateContent);
-  corruptionSelector.addEventListener('change', updateContent);
-  promptSelector.addEventListener('change', updateContent);
-  caseSelector.addEventListener('change', updateContent);
+    // 2) If model or corruption changes, only fetch the new model output.
+    async function handleModelOrCorruptionChange(type, newValue) {
+      if (type === 'model') {
+        selectedModel = newValue;
+        updateButtonStyles('modelButtons', selectedModel);
+      } else if (type === 'corruption') {
+        selectedCorruption = newValue;
+        updateButtonStyles('corruptionButtons', selectedCorruption);
   
-  // Initialize content
-  updateContent();
-</script>
+        // If corruption changed, we also update images
+        if (currentCaseData) {
+          updateImages();
+        }
+      }
+  
+      // Now fetch new model output (only if we have case data)
+      if (currentCaseData) {
+        try {
+          currentModelOutput = await fetchModelOutput(selectedCase, selectedModel, selectedCorruption);
+          updateModelAnswer();
+          updateEvaluator();
+        } catch (err) {
+          currentModelOutput = null;
+          console.error(err);
+        }
+      }
+    }
+  
+    // 3) If prompt changes, only update the Evaluator text.
+    function handlePromptChange(newPrompt) {
+      // If user is on case2 and tries context-aware => revert to baseline
+      if (selectedCase === 'case2' && newPrompt === 'context-aware') {
+        selectedPrompt = 'baseline';
+      } else {
+        selectedPrompt = newPrompt;
+      }
+  
+      updateButtonStyles('promptButtons', selectedPrompt);
+      updateEvaluator();
+  
+      // Also refresh the disabled state in case we tried to pick context-aware on case2
+      updateContextAwareButtonState();
+    }
+  
+    /**********************************************************
+     * Initialization - Create Buttons and Bind Events
+     **********************************************************/
+    function createButtons(containerId, values, onClickFn) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = ''; // Clear any existing content
+  
+      values.forEach(val => {
+        const btn = document.createElement('button');
+        btn.className = 'button';
+        btn.textContent = val;
+        btn.dataset.value = val;
+        btn.addEventListener('click', () => onClickFn(val));
+        container.appendChild(btn);
+      });
+    }
+  
+    // Create all button groups
+    createButtons('caseButtons', cases, (val) => handleCaseChange(val));
+    createButtons('modelButtons', models, (val) => handleModelOrCorruptionChange('model', val));
+    createButtons('corruptionButtons', corruptions, (val) => handleModelOrCorruptionChange('corruption', val));
+    createButtons('promptButtons', prompts, (val) => handlePromptChange(val));
+  
+    // Initial highlight
+    updateButtonStyles('caseButtons', selectedCase);
+    updateButtonStyles('modelButtons', selectedModel);
+    updateButtonStyles('corruptionButtons', selectedCorruption);
+    updateButtonStyles('promptButtons', selectedPrompt);
+  
+    // Load initial data and set button states
+    handleCaseChange(selectedCase);
+  </script>
 
 
 
