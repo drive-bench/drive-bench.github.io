@@ -258,7 +258,7 @@
             class="pipeline image" alt="benchmark"/>
         <br/>
         <p>
-          <strong>Overview of key features and configurations in</strong> <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span>. 
+          <strong>Overview of key features and configurations in <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span></strong>. 
           Our benchmark evaluates the reliability and visual grounding of VLMs in autonomous driving across <b>four mainstream driving tasks</b> - perception, prediction, planning, and explanation - under a diverse spectrum of <b>17 settings</b> (clean, corrupted, and text-only inputs). 
           It includes <b>19,200 frames</b> and <b>20,498 QA pairs</b> spanning <b>three question types</b>: multiple-choice, open-ended, and visual grounding. 
           By addressing diverse tasks and conditions, we aim to reveal VLM limitations and promote reliable, interpretable autonomous driving.
@@ -379,6 +379,179 @@
     </div>
   </section>
 
+
+
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">
+        Benchmark Comparison
+      </h2>
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th rowspan="2">Benchmark</th>
+                  <th rowspan="2"><img src="static/icons/perception.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Perception</span></th>
+                  <th rowspan="2"><img src="static/icons/prediction.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Prediction</span></th>
+                  <th rowspan="2"><img src="static/icons/behavior.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Behavior</span></th>
+                  <th rowspan="2"><img src="static/icons/planning.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Planning</span></th>
+                  <th rowspan="2"><img src="static/icons/robustness.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Robustness</span></th>
+                  <th>Frames</th>
+                  <th>QA</th>
+                  <th rowspan="2">Logic</th>
+                  <th rowspan="2">Evaluation Metrics</th>
+                </tr>
+                <tr>
+                  <th>(Test)</th>
+                  <th>(Test)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>BDD-X</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>None</td>
+                  <td>Language</td>
+                </tr>
+                <tr>
+                  <td>BDD-OIA</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>None</td>
+                  <td>F1 Score</td>
+                </tr>
+                <tr>
+                  <td>nuScenes-QA</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>36,114</td>
+                  <td>83,337</td>
+                  <td>None</td>
+                  <td>Acc</td>
+                </tr>
+                <tr>
+                  <td>Talk2Car</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>~1.8k</td>
+                  <td>2,447</td>
+                  <td>None</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>nuPrompt</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>~36k</td>
+                  <td>~6k</td>
+                  <td>None</td>
+                  <td>AMOTA</td>
+                </tr>
+                <tr>
+                  <td>DRAMA</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>-</td>
+                  <td>~14k</td>
+                  <td>Chain</td>
+                  <td>Language</td>
+                </tr>
+                <tr>
+                  <td>Rank2Tel</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>Chain</td>
+                  <td>Accuracy, Language</td>
+                </tr>
+                <tr>
+                  <td>DirveMLLM</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>880</td>
+                  <td>-</td>
+                  <td>None</td>
+                  <td>Acc</td>
+                </tr>
+                <tr>
+                  <td>DriveVLM</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>None</td>
+                  <td>GPT<sub>ctx</sub></td>
+                </tr>
+                <tr>
+                  <td>DriveLM</td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(192, 0, 0);">✘</span></td>
+                  <td>4,794</td>
+                  <td>15,480</td>
+                  <td>Graph</td>
+                  <td>Language, GPT</td>
+                </tr>
+                <tr>
+                  <td><strong><span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span> (Ours)</strong></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><span style="color: rgb(0, 176, 80);">✔</span></td>
+                  <td><b>19,200</b></td>
+                  <td><b>20,498</b></td>
+                  <td><b>Graph</b></td>
+                  <td><b>Acc, Language, GPT, GPT<sub>ctx</sub></b></td>
+                </tr>
+              </tbody>     
+            </table>
+          </div><hr>
+    </div>
+  </div>
+
+  
+
+  <br/>
 
 
 
