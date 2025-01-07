@@ -228,26 +228,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The rapid advancements in Vision-Language Models (VLMs) have sparked significant 
-            interest in their application to autonomous driving, with a focus on achieving 
-            interpretable driving decisions through natural language interactions. In this work, 
-            we question the fundamental assumption that VLMs inherently provide visual-grounded 
-            explanations in driving contexts thus improving driving interpretability. 
-            The assumption has been widely acknowledged yet systematically examined.
-            Through extensive experiments across 17 conditions (including clean image, 
-            corrupted image, and text-only inputs), 12 models, and 5 task domains, 
-            we comprehensively investigate the reliability of VLMs' visual-grounded 
-            explanations in driving scenarios. Our findings reveal that VLMs frequently 
-            fabricate plausible driving responses from general knowledge or subtle text cues, 
-            especially in scenarios with degraded or absent visual information.
-            However, the phenomenon is long-hiding due to significant problems 
-            in terms of dataset imbalances, and unreliable evaluations within 
-            current driving-with-language benchmarks, which fail to effectively assess 
-            the contextual and safety-oriented requirements of autonomous driving tasks. 
-            Instead of pushing for the state-of-the-art model under problematical setups, 
-            our works highlight the need to rethink the current dataset and metric designs 
-            that better capture the visual-grounded reliability in VLMs for trustworthy 
-            real-world autonomous driving.
+            Recent advancements in Vision-Language Models (VLMs) have sparked interest in their use for autonomous driving, particularly in generating interpretable driving decisions through natural language. 
+            However, the assumption that VLMs inherently provide visually grounded, reliable, and interpretable explanations for driving remains largely unexamined. 
+            To address this gap, we introduce <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span>, a benchmark dataset designed to evaluate VLM reliability across <b>17 settings</b> (clean, corrupted, and text-only inputs), encompassing <b>19,200 frames</b>, <b>20,498 question-answer pairs</b>, <b>three question types</b>, <b>four mainstream driving tasks</b>, and <b>a total of 12 popular VLMs</b>. 
+            Our findings reveal that VLMs often generate plausible responses derived from general knowledge or textual cues rather than true visual grounding, especially under degraded or missing visual inputs. 
+            This behavior, concealed by dataset imbalances and insufficient evaluation metrics, poses significant risks in safety-critical scenarios like autonomous driving. 
+            We further observe that VLMs struggle with multi-modal reasoning and display heightened sensitivity to input corruptions, leading to inconsistencies in performance. 
+            To address these challenges, we propose refined evaluation metrics that prioritize robust visual grounding and multi-modal understanding. 
+            Additionally, we highlight the potential of leveraging VLMs’ awareness of corruptions to enhance their reliability, offering a roadmap for developing more trustworthy and interpretable decision-making systems in real-world autonomous driving contexts. 
+            The benchmark toolkit is publicly accessible.
           </p>
         </div>
       </div>
@@ -265,10 +254,15 @@
         <span class="icon"><i class="fas fa-bus"></i></span>&thinsp;&thinsp;<span style="color: rgb(66, 133, 244);">Drive</span><span style="color: rgb(192, 0, 0);">Bench</span>: Driving with VLMs
       </h2>
       <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <img src="static/figures/bench.png" style="width:80%"
+        <img src="static/figures/bench.png" style="width:90%"
             class="pipeline image" alt="benchmark"/>
         <br/>
-        <p><strong>Overview of key features and configurations in</strong> <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span>. Our benchmark encompasses four mainstream driving tasks under <strong>17</strong> settings (clean, corrupted, and text-only visual inputs). The benchmark has <strong>19,200</strong> images and <strong>20,498</strong> QA pairs in total, spanning across <strong>3</strong> question types.</p>
+        <p>
+          <strong>Overview of key features and configurations in</strong> <span style="font-family: 'Nunito', sans-serif; color: rgb(66, 133, 244);">Drive</span><span style="font-family: 'Nunito', sans-serif; color: rgb(192, 0, 0);">Bench</span>. 
+          Our benchmark evaluates the reliability and visual grounding of VLMs in autonomous driving across <b>four mainstream driving tasks</b> - perception, prediction, planning, and explanation - under a diverse spectrum of <b>17 settings</b> (clean, corrupted, and text-only inputs). 
+          It includes <b>19,200 frames</b> and <b>20,498 QA pairs</b> spanning <b>three question types</b>: multiple-choice, open-ended, and visual grounding. 
+          By addressing diverse tasks and conditions, we aim to reveal VLM limitations and promote reliable, interpretable autonomous driving.
+        </p>
       </div><hr>
     </div>
   </div>
@@ -281,7 +275,7 @@
       <div class="columns is-centered" style="display: flex; align-items: center;">
         <!-- Left Column for the Image -->
         <div class="column is-half" style="text-align: center;">
-          <img src="static/figures/teaser.jpg" style="max-width: 100%; height: auto;" />
+          <img src="static/figures/teaser.png" style="max-width: 100%; height: auto;" />
         </div>
         <!-- Right Column for the Text -->
         <div class="column is-half">
@@ -290,14 +284,17 @@
               <span class="icon"><i class="fa fa-question-circle"></i></span>&thinsp; Are Existing VLMs Ready for Autonomous Driving?
             </h2>
             <p>
-              We study this problem from perspectives on reliability, data, and metrics. 
-              We find existing VLMs tend to fabricate quality answers to driving questions when visual information is absent. The fabricated answers can bypass current metrics, even GPT scores, due to dataset imbalance, lack of context dataset, and problematical evaluation protocols. 
-              Our observations challenge the passive assumption that VLMs are more reliable than task-specific models in driving decisions because of visual-grounded interpretable responses.</p>
+              We investigate this question through the lenses of <b>reliability</b>, <b>data quality</b>, and <b>evaluation metrics</b>. 
+              Our findings reveal that current VLMs often fabricate convincing answers to driving-related questions, even in the absence of visual information. 
+              These fabricated responses can bypass existing evaluation metrics, including GPT scores, due to issues such as dataset imbalance, insufficient contextual data, and flawed evaluation protocols. 
+              These observations challenge the widely held assumption that VLMs inherently provide more reliable, visually grounded, and interpretable responses than task-specific models in driving scenarios.
+            </p>
           </div>
         </div>
       </div><hr>
     </div>
   </section>
+
 
   <br/>
 
@@ -378,7 +375,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><hr>
     </div>
   </section>
 
@@ -1434,6 +1431,8 @@
 </section>
 
 
+<br/><br/>
+
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
@@ -1444,12 +1443,9 @@
               Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
             we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+            </p>
         </div>
       </div>
     </div>
