@@ -1324,7 +1324,7 @@
         <div class="content has-text-justified" style="padding-top: 15px">
           <br/>
           <p>
-            <b>Figure.</b> Comparisons among different evaluation types (rubric, question-aware, and context-aware). 
+            <b>Figure.</b> Comparisons among <b>Different Evaluation Types</b> (rubric, question-aware, and context-aware). 
             The GPT scores vary depending on the rubric, question, and physical driving context. With more information added, the results become more distinguishable.
           </p>
         </div>
@@ -1350,8 +1350,8 @@
         <img src="static/figures/examples_benchmark_3.png" />
         <div class="content has-text-justified" style="padding-top: 15px">
           <p>
-            <b>Figure.</b> Examples of GPT-4o responses to four tasks and the corresponding evaluation results under the <b>Dark</b> condition. 
-            We observe that GPT-4o is aware of the low-light environment and can identify the bus and pedestrian from the image, showing certain degrees of resilience.
+            <b>Figure.</b> Examples of different VLM responses under the <b>Frame Lost</b> condition. 
+            We observe that GPT-4o responses with visible objects while LLaVA-NeXT and DriveLM tend to hallucinate objects that cannot be seen from the provided images.
           </p>
 
           <br/><br/><br/>
@@ -1362,9 +1362,9 @@
         <div class="content has-text-justified" style="padding-top: 15px">
           <br/>
           <p>
-            <b>Figure.</b> Examples of GPT-4o response to four tasks and the corresponding evaluation results under the <b>Motion Blur</b> condition. 
-            We observe that GPT-4o are influenced by this type of corruption and tend to predict "driving fast" based on it. 
-            The example shows the potential of visual corruption to influence high-level driving decisions.
+            <b>Figure.</b> Examples of different VLM responses under the <b>Water Splash</b> condition. 
+            We observe that, under severe visual corruptions, VLMs respond with ambiguous and general answers based on their learned knowledge, without referring to the visual information. 
+            Most responses include traffic signals and pedestrians, even though they are not visible in the provided images.
           </p>
         </div>
         </div>
