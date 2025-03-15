@@ -5,7 +5,7 @@
   <meta name="description" content="Are VLMs Ready for Autonomous Driving? An Empirical Study from the Reliability, Data, and Metric Perspectives">
   <meta name="keywords" content="Autonomous Driving, Vision-Language Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DriveBench - Project Page</title>
+  <title>DriveBench</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -25,22 +25,87 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <!-- <link rel="stylesheet" href="./static/css/bulma-carousel.min.css"> -->
-  <!-- <link rel="stylesheet" href="./static/css/bulma-slider.min.css"> -->
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <!-- <script src="./static/js/bulma-carousel.min.js"></script> -->
-  <!-- <script src="./static/js/bulma-slider.min.js"></script> -->
-  <!-- <script src="./static/js/index.js"></script> -->
+
+  <link rel="icon" href="./static/icons/robustness.png" type="image/x-icon">
+
+
+  <style>
+    .fixed-width-section {
+      max-width: 1000px; /* Set a fixed width */
+      margin: 0 auto; /* Center the section horizontally */
+      padding: 0 15px; /* Add some padding to prevent overflow on small screens */
+    }
+
+    @media (max-width: 768px) {
+    .fixed-width-section {
+      max-width: 90%; /* Allow up to 90% of the screen width on phones */
+      padding: 0 10px; /* Reduce padding on smaller screens */
+    }}
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 50px;
+      z-index: 999;
+      background-color: rgb(66, 133, 244);
+      color: white;
+      border: none;
+      border-radius: 50%; /* Circular button */
+      padding: 12px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      transition: opacity 0.3s;
+      display: none; /* Hidden by default */
+    }
+    
+    #backToTopBtn:hover {
+      background-color: rgb(192, 0, 0);
+    }
+    
+    @media (max-width: 768px) {
+      #backToTopBtn {
+        font-size: 18px;
+        padding: 10px 14px;
+      }
+    }
+  </style>
 </head>
 
 
 <body>
+
+
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑</button>
+
+  <script>
+    // Show the button when scrolled down 20px
+    window.onscroll = function() {
+      scrollFunction();
+    };
+  
+    function scrollFunction() {
+      const button = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+  
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <!-- <div class="navbar-brand">
@@ -92,7 +157,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h2 class="title is-2 publication-title">
-            Are VLMs Ready for Autonomous Driving?<br/>An Empirical Study from the Reliability, Data, and Metric Perspectives
+            <img src="./static/icons/human.png" style="height: 38px; vertical-align: top;">Are VLMs Ready for Autonomous Driving?<br/>An Empirical Study from the Reliability, Data, and Metric Perspectives
           </h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -249,12 +314,12 @@
 
 <section class="section" style="margin-top: -10px;">
   <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
+    <div class="column is-four-fifths fixed-width-section">
       <h2 class="title is-3">
         <span class="icon"><i class="fas fa-bus"></i></span>&thinsp;&thinsp;<span style="color: rgb(66, 133, 244);">Drive</span><span style="color: rgb(192, 0, 0);">Bench</span>: Driving with VLMs
       </h2>
       <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <img src="static/figures/bench.png" style="width:90%"
+        <img src="static/figures/bench.png" style="width:100%"
             class="pipeline image" alt="benchmark"/>
         <br/>
         <p>
@@ -337,7 +402,7 @@
           <!-- Rows for icons and text -->
           <div class="columns">
             <div class="column is-one-quarter">
-              <img src="./static/images/icon1.png" alt="Icon 1" style="width: 30%; max-width: 100px; float: right;">
+              <img src="./static/images/icon1.png" alt="Icon 1" loading="lazy" style="width: 30%; max-width: 100px; float: right;">
             </div>
             <div class="column" id="questionContainer"
                  style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
@@ -347,7 +412,7 @@
   
           <div class="columns">
             <div class="column is-one-quarter">
-              <img src="./static/images/icon2.png" alt="Icon 2" style="width: 30%; max-width: 100px; float: right;">
+              <img src="./static/images/icon2.png" alt="Icon 2" loading="lazy" style="width: 30%; max-width: 100px; float: right;">
             </div>
             <div class="column" id="answerContainer"
                  style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
@@ -357,7 +422,7 @@
   
           <div class="columns">
             <div class="column is-one-quarter">
-              <img src="./static/images/icon3.png" alt="Icon 3" style="width: 30%; max-width: 100px; float: right;">
+              <img src="./static/images/icon3.png" alt="Icon 3" loading="lazy" style="width: 30%; max-width: 100px; float: right;">
             </div>
             <div class="column" id="gtContainer"
                  style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
@@ -367,7 +432,7 @@
   
           <div class="columns">
             <div class="column is-one-quarter">
-              <img src="./static/images/icon4.png" alt="Icon 4" style="width: 30%; max-width: 100px; float: right;">
+              <img src="./static/images/icon4.png" alt="Icon 4" loading="lazy" style="width: 30%; max-width: 100px; float: right;">
             </div>
             <div class="column" id="evaluatorContainer"
                  style="max-height: 150px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; margin: 10px; box-sizing: border-box;">
@@ -386,7 +451,7 @@
 
 
   <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
+    <div class="column is-four-fifths fixed-width-section">
       <h2 class="title is-3">
         Benchmark Comparison
       </h2>
@@ -395,11 +460,11 @@
               <thead>
                 <tr>
                   <th rowspan="2">Benchmark</th>
-                  <th rowspan="2"><img src="static/icons/perception.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Perception</span></th>
-                  <th rowspan="2"><img src="static/icons/prediction.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Prediction</span></th>
-                  <th rowspan="2"><img src="static/icons/behavior.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Behavior</span></th>
-                  <th rowspan="2"><img src="static/icons/planning.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Planning</span></th>
-                  <th rowspan="2"><img src="static/icons/robustness.png" style="width: 40px; height: 40px; vertical-align: top;"><span>Robustness</span></th>
+                  <th rowspan="2"><img src="static/icons/perception.png" loading="lazy" style="width: 40px; height: 40px; vertical-align: top;"><span>Perception</span></th>
+                  <th rowspan="2"><img src="static/icons/prediction.png" loading="lazy" style="width: 40px; height: 40px; vertical-align: top;"><span>Prediction</span></th>
+                  <th rowspan="2"><img src="static/icons/behavior.png" loading="lazy" style="width: 40px; height: 40px; vertical-align: top;"><span>Behavior</span></th>
+                  <th rowspan="2"><img src="static/icons/planning.png" loading="lazy" style="width: 40px; height: 40px; vertical-align: top;"><span>Planning</span></th>
+                  <th rowspan="2"><img src="static/icons/robustness.png" loading="lazy" style="width: 40px; height: 40px; vertical-align: top;"><span>Robustness</span></th>
                   <th>Frames</th>
                   <th>QA</th>
                   <th rowspan="2">Logic</th>
@@ -563,7 +628,7 @@
       <div class="columns is-centered" style="display: flex; align-items: center;">
         <!-- Left Column for the Image -->
         <div class="column is-half" style="text-align: center;">
-          <img src="static/figures/cloud.png" style="max-width: 100%; height: auto;" />
+          <img src="static/figures/cloud.png" loading="lazy" style="max-width: 100%; height: auto;" />
         </div>
         <!-- Right Column for the Text -->
         <div class="column is-half">
@@ -606,7 +671,7 @@
         </div>
         <!-- Right Column for the Image -->
         <div class="column is-half" style="text-align: center;">
-          <img src="static/figures/dataset_cases.jpg" style="max-width: 100%; height: auto;" />
+          <img src="static/figures/dataset_cases.jpg" loading="lazy" style="max-width: 100%; height: auto;" />
         </div>
       </div><hr>
     </div>
@@ -621,7 +686,7 @@
       <div class="columns is-centered" style="display: flex; align-items: center;">
         <!-- Left Column for the Image -->
         <div class="column is-half" style="text-align: center;">
-          <img src="static/figures/spatial_distribution.png" style="max-width: 100%; height: auto;" />
+          <img src="static/figures/spatial_distribution.png" loading="lazy" style="max-width: 100%; height: auto;" />
         </div>
         <!-- Right Column for the Text -->
         <div class="column is-half">
@@ -658,18 +723,18 @@
                 <th>Model</th>
                 <th>Size</th>
                 <th>Type</th>
-                <th><img src="static/icons/perception.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/perception.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/perception.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
-                <th><img src="static/icons/prediction.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/prediction.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/prediction.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
-                <th><img src="static/icons/planning.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/planning.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/planning.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
-                <th><img src="static/icons/behavior.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
-                <th><img src="static/icons/behavior.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
-                <th><img src="static/icons/behavior.png" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/perception.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/perception.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/perception.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Perception</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/prediction.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/prediction.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/prediction.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Prediction</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/planning.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/planning.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/planning.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Planning</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
+                <th><img src="static/icons/behavior.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(0, 176, 80);">Clean</span>)</th>
+                <th><img src="static/icons/behavior.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(192, 0, 0);">Corr.</span>)</th>
+                <th><img src="static/icons/behavior.png" loading="lazy" style="width: 37px; height: 37px; vertical-align: top;"><span>Behavior</span> (<span style="color: rgb(66, 133, 244);">T.O.</span>)</th>
               </tr>
             </thead>
             <tbody>
@@ -934,11 +999,11 @@
                 <th rowspan="2">Model</th>
                 <th rowspan="2">Size</th>
                 <th rowspan="2">Type</th>
-                <th colspan="3"><img src="static/icons/weather.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/></span>Weather</th>
-                <th colspan="3"><img src="static/icons/external.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>External</th>
-                <th colspan="3"><img src="static/icons/sensor.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Sensor</th>
-                <th colspan="3"><img src="static/icons/motion.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Motion</th>
-                <th colspan="3"><img src="static/icons/transmission.png" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Transmission</th>
+                <th colspan="3"><img src="static/icons/weather.png" loading="lazy" style="width: 45px; height: 45px; vertical-align: top;"><span><br/></span>Weather</th>
+                <th colspan="3"><img src="static/icons/external.png" loading="lazy" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>External</th>
+                <th colspan="3"><img src="static/icons/sensor.png" loading="lazy" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Sensor</th>
+                <th colspan="3"><img src="static/icons/motion.png" loading="lazy" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Motion</th>
+                <th colspan="3"><img src="static/icons/transmission.png" loading="lazy" style="width: 45px; height: 45px; vertical-align: top;"><span><br/>Transmission</th>
               </tr>
               <tr>
                 <th><span style="color: rgb(66, 133, 244);">MCQ</span></th>
@@ -1225,7 +1290,7 @@
       <div class="columns is-centered" style="display: flex; align-items: center;">
         <!-- Left Column for the Image -->
         <div class="column is-half" style="text-align: center;">
-          <img src="static/figures/gpt_rouge_bleu.png" style="max-width: 100%; height: auto;" />
+          <img src="static/figures/gpt_rouge_bleu.png" loading="lazy" style="max-width: 100%; height: auto;" />
         </div>
         <!-- Right Column for the Text -->
         <div class="column is-half">
@@ -1267,7 +1332,7 @@
         </div>
         <!-- Right Column for the Image -->
         <div class="column is-half" style="text-align: center;">
-          <img src="static/figures/behavior_distribution.png" style="max-width: 100%; height: auto;" />
+          <img src="static/figures/behavior_distribution.png" loading="lazy" style="max-width: 100%; height: auto;" />
         </div>
       </div><hr>
     </div>
@@ -1284,7 +1349,7 @@
           <h2 class="title is-3">
             <span class="icon"><i class="fa fa-paw"></i></span>&thinsp; GPT4-o Examples
           </h2>
-        <img src="static/figures/examples_gpt4o_1.png" />
+        <img src="static/figures/examples_gpt4o_1.png" loading="lazy"/>
         <div class="content has-text-justified" style="padding-top: 15px">
           <p>
             <b>Figure.</b> Examples of GPT-4o responses to four tasks and the corresponding evaluation results under the <b>Dark</b> condition. 
@@ -1294,7 +1359,7 @@
           <br/><br/><br/>
 
         <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-          <img src="static/figures/examples_gpt4o_2.png" />
+          <img src="static/figures/examples_gpt4o_2.png" loading="lazy"/>
 
         <div class="content has-text-justified" style="padding-top: 15px">
           <br/>
@@ -1322,7 +1387,7 @@
           </h2>
 
         <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-          <img src="static/figures/evaluation_types.png" />
+          <img src="static/figures/evaluation_types.png" loading="lazy"/>
 
         <div class="content has-text-justified" style="padding-top: 15px">
           <br/>
@@ -1350,7 +1415,7 @@
           <h2 class="title is-3">
             Qualitative Comparisons
           </h2>
-        <img src="static/figures/examples_benchmark_3.png" />
+        <img src="static/figures/examples_benchmark_3.png" loading="lazy"/>
         <div class="content has-text-justified" style="padding-top: 15px">
           <p>
             <b>Figure.</b> Examples of different VLM responses under the <b>Frame Lost</b> condition. 
@@ -1360,7 +1425,7 @@
           <br/><br/><br/>
 
         <div class="pipeline" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-          <img src="static/figures/examples_benchmark_4.png" />
+          <img src="static/figures/examples_benchmark_4.png" loading="lazy"/>
 
         <div class="content has-text-justified" style="padding-top: 15px">
           <br/>
